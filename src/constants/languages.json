@@ -1,0 +1,261 @@
+{
+  "suggestedLanguages": [
+    {
+      "code": "en-gb",
+      "name": "English (UK)",
+      "nativeName": "English (UK)"
+    },
+    {
+      "code": "en-us",
+      "name": "English (US)",
+      "nativeName": "English (US)"
+    },
+    {
+      "code": "de",
+      "name": "German",
+      "nativeName": "Deutsch"
+    },
+    {
+      "code": "fr",
+      "name": "French",
+      "nativeName": "Français"
+    },
+    {
+      "code": "es",
+      "name": "Spanish",
+      "nativeName": "Español"
+    },
+    {
+      "code": "ro",
+      "name": "Romanian",
+      "nativeName": "Română"
+    }
+  ],
+  "allLanguages": [
+    {
+      "code": "en-gb",
+      "name": "English (UK)",
+      "nativeName": "English (UK)"
+    },
+    {
+      "code": "en-us",
+      "name": "English (US)",
+      "nativeName": "English (US)"
+    },
+    {
+      "code": "de",
+      "name": "German",
+      "nativeName": "Deutsch"
+    },
+    {
+      "code": "nl",
+      "name": "Dutch",
+      "nativeName": "Nederlands"
+    },
+    {
+      "code": "fr",
+      "name": "French",
+      "nativeName": "Français"
+    },
+    {
+      "code": "es",
+      "name": "Spanish",
+      "nativeName": "Español"
+    },
+    {
+      "code": "es-ar",
+      "name": "Spanish (Argentina)",
+      "nativeName": "Español (AR)"
+    },
+    {
+      "code": "es-mx",
+      "name": "Spanish (Mexico)",
+      "nativeName": "Español (MX)"
+    },
+    {
+      "code": "ca",
+      "name": "Catalan",
+      "nativeName": "Català"
+    },
+    {
+      "code": "it",
+      "name": "Italian",
+      "nativeName": "Italiano"
+    },
+    {
+      "code": "pt-pt",
+      "name": "Portuguese (Portugal)",
+      "nativeName": "Português (PT)"
+    },
+    {
+      "code": "pt-br",
+      "name": "Portuguese (Brazil)",
+      "nativeName": "Português (BR)"
+    },
+    {
+      "code": "no",
+      "name": "Norwegian",
+      "nativeName": "Norsk"
+    },
+    {
+      "code": "fi",
+      "name": "Finnish",
+      "nativeName": "Suomi"
+    },
+    {
+      "code": "sv",
+      "name": "Swedish",
+      "nativeName": "Svenska"
+    },
+    {
+      "code": "da",
+      "name": "Danish",
+      "nativeName": "Dansk"
+    },
+    {
+      "code": "cs",
+      "name": "Czech",
+      "nativeName": "Čeština"
+    },
+    {
+      "code": "hu",
+      "name": "Hungarian",
+      "nativeName": "Magyar"
+    },
+    {
+      "code": "ro",
+      "name": "Romanian",
+      "nativeName": "Română"
+    },
+    {
+      "code": "ja",
+      "name": "Japanese",
+      "nativeName": "日本語"
+    },
+    {
+      "code": "zh-cn",
+      "name": "Chinese (Simplified)",
+      "nativeName": "简体中文"
+    },
+    {
+      "code": "zh-tw",
+      "name": "Chinese (Traditional)",
+      "nativeName": "繁體中文"
+    },
+    {
+      "code": "pl",
+      "name": "Polish",
+      "nativeName": "Polski"
+    },
+    {
+      "code": "el",
+      "name": "Greek",
+      "nativeName": "Ελληνικά"
+    },
+    {
+      "code": "ru",
+      "name": "Russian",
+      "nativeName": "Русский"
+    },
+    {
+      "code": "tr",
+      "name": "Turkish",
+      "nativeName": "Türkçe"
+    },
+    {
+      "code": "bg",
+      "name": "Bulgarian",
+      "nativeName": "Български"
+    },
+    {
+      "code": "ar",
+      "name": "Arabic",
+      "nativeName": "العربية"
+    },
+    {
+      "code": "ko",
+      "name": "Korean",
+      "nativeName": "한국어"
+    },
+    {
+      "code": "he",
+      "name": "Hebrew",
+      "nativeName": "עברית"
+    },
+    {
+      "code": "lv",
+      "name": "Latvian",
+      "nativeName": "Latviski"
+    },
+    {
+      "code": "uk",
+      "name": "Ukrainian",
+      "nativeName": "Українська"
+    },
+    {
+      "code": "hi",
+      "name": "Hindi",
+      "nativeName": "हिन्दी"
+    },
+    {
+      "code": "id",
+      "name": "Indonesian",
+      "nativeName": "Bahasa Indonesia"
+    },
+    {
+      "code": "ms",
+      "name": "Malay",
+      "nativeName": "Bahasa Malaysia"
+    },
+    {
+      "code": "th",
+      "name": "Thai",
+      "nativeName": "ภาษาไทย"
+    },
+    {
+      "code": "et",
+      "name": "Estonian",
+      "nativeName": "Eesti"
+    },
+    {
+      "code": "hr",
+      "name": "Croatian",
+      "nativeName": "Hrvatski"
+    },
+    {
+      "code": "lt",
+      "name": "Lithuanian",
+      "nativeName": "Lietuvių"
+    },
+    {
+      "code": "sk",
+      "name": "Slovak",
+      "nativeName": "Slovenčina"
+    },
+    {
+      "code": "sr",
+      "name": "Serbian",
+      "nativeName": "Srpski"
+    },
+    {
+      "code": "sl",
+      "name": "Slovenian",
+      "nativeName": "Slovenščina"
+    },
+    {
+      "code": "vi",
+      "name": "Vietnamese",
+      "nativeName": "Tiếng Việt"
+    },
+    {
+      "code": "tl",
+      "name": "Filipino",
+      "nativeName": "Filipino"
+    },
+    {
+      "code": "is",
+      "name": "Icelandic",
+      "nativeName": "Íslenska"
+    }
+  ]
+}
