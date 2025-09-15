@@ -24,7 +24,7 @@ import { IconAlertCircle, IconMail, IconLock, IconCheck, IconArrowLeft, IconBuil
 import { useAuth } from '@/contexts/AuthContext';
 import { useThemeStyles } from '@/contexts/ThemeContext';
 import { notifications } from '@mantine/notifications';
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import { createBrowserClient } from '@supabase/ssr';
 
 interface ResetPasswordFormData {
   email?: string;
@@ -57,7 +57,10 @@ export default function ForgotPasswordPartnerPage() {
   const searchParams = useSearchParams();
   const { resetPassword, updatePassword } = useAuth();
   const themeStyles = useThemeStyles();
-  const supabase = createClientComponentClient();
+  const supabase = createBrowserClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
 
   // Check if user is in password reset mode
   useEffect(() => {

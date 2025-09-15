@@ -89,7 +89,6 @@ export const ro = {
     countries: 'Țări',
     popularDestinations: 'Destinații Populare',
     exploreMore: 'Explorează cele mai iubite locații din și din jurul Buzăului',
-    whyChooseSubtitle: 'Ne angajăm să oferim experiențe excepționale atât pentru oaspeți, cât și pentru gazde',
     buzauCenter: 'Centrul Orașului Buzău',
     buzauCenterDesc: 'Farmecul istoric întâlnește confortul modern',
     carpathianMountains: 'Munții Carpați',
@@ -102,7 +101,9 @@ export const ro = {
     ctaTitle: 'Gata să îți începi călătoria?',
     ctaDescription: 'Alătură-te miilor de călători care și-au descoperit sejururile perfecte cu Vama Buzău. Fie că planifici o escapadă de weekend sau o vacanță prelungită, avem locul perfect pentru tine.',
     browseProperties: 'Răsfoiește Proprietățile',
-    becomeHost: 'Devino Gazdă'
+    becomeHost: 'Devino Gazdă',
+    exploreLocations: 'Explorează Locații',
+    exploreLocationsDesc: 'Caută orice oraș, județ sau țară și descoperă proprietăți uimitoare în acea zonă'
   }
 };
 

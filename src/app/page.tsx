@@ -107,15 +107,15 @@ export default function HomePage() {
   const stats = getStats(t);
   const popularDestinations = getPopularDestinations(t);
 
-  // Redirect authenticated users to dashboard
+  // Redirect admin and owner users to dashboard, but allow clients to stay on homepage
   useEffect(() => {
-    if (user) {
+    if (user && (user.role === 'administrator' || user.role === 'owner')) {
       router.push('/dashboard');
     }
   }, [user, router]);
 
-  // Don't render home page if user is authenticated
-  if (user) {
+  // Don't render home page if user is admin or owner (they get redirected)
+  if (user && (user.role === 'administrator' || user.role === 'owner')) {
     return null;
   }
 
@@ -143,23 +143,23 @@ export default function HomePage() {
       </Container>
 
       {/* Features Section */}
-      <Box bg="gray.0" py={{ base: 'lg', sm: 'xl' }}>
-        <Container size={1200} px={{ base: 'md', sm: 'xl' }}>
-          <Stack align="center" gap={{ base: 'lg', sm: 'xl' }}>
+      <Box bg="gray.0" py="xl">
+        <Container size={1200} px="xl">
+          <Stack align="center" gap="xl">
             <div style={{ textAlign: 'center' }}>
-              <Title order={2} size="2.5rem" mb={{ base: 'sm', sm: 'md' }}>
+              <Title order={2} size="2.5rem" mb="md">
                 {t.homepage.whyChooseTitle}
               </Title>
-              <Text size="lg" c="dimmed" maw={600} px={{ base: 'sm', sm: 0 }}>
+              <Text size="lg" c="dimmed" maw={600}>
                 {t.homepage.whyChooseSubtitle}
               </Text>
             </div>
-            <SimpleGrid cols={{ base: 1, sm: 2, lg: 4 }} spacing={{ base: 'md', sm: 'lg', md: 'xl' }}>
+            <SimpleGrid cols={{ base: 1, sm: 2, lg: 4 }} spacing="xl">
               {features.map((feature, index) => {
                 const Icon = feature.icon;
                 return (
-                  <Card key={index} shadow="sm" padding={{ base: 'md', sm: 'lg', md: 'xl' }} radius="md" withBorder>
-                    <Stack align="center" ta="center" gap={{ base: 'sm', sm: 'md' }}>
+                  <Card key={index} shadow="sm" padding="xl" radius="md" withBorder>
+                    <Stack align="center" ta="center" gap="md">
                       <ThemeIcon size={60} radius="md" color={feature.color}>
                         <Icon size={30} />
                       </ThemeIcon>
@@ -247,7 +247,7 @@ export default function HomePage() {
       </Container>
 
       {/* Map Search Section */}
-      <Container size={1200} py={{ base: 'lg', sm: 'xl' }}>
+      <Container size={1200} py="xl">
         <MapWithSearch
           title={t.homepage.exploreLocations || "Explore Locations"}
           description={t.homepage.exploreLocationsDesc || "Search for any city, state, or country and discover amazing properties in that area"}

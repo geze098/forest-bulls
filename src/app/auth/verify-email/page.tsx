@@ -19,7 +19,7 @@ import {
 import { IconMail, IconCheck, IconAlertCircle, IconRefresh } from '@tabler/icons-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { notifications } from '@mantine/notifications';
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import { createBrowserClient } from '@supabase/ssr';
 
 export default function VerifyEmailPage() {
   const [loading, setLoading] = useState(false);
@@ -31,7 +31,10 @@ export default function VerifyEmailPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const email = searchParams.get('email');
-  const supabase = createClientComponentClient();
+  const supabase = createBrowserClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
 
   // Handle email verification from URL
   useEffect(() => {

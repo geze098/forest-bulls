@@ -91,7 +91,6 @@ export const en: TranslationKeys = {
     countries: 'Countries',
     popularDestinations: 'Popular Destinations',
     exploreMore: 'Explore the most loved locations in and around Buzău',
-    whyChooseSubtitle: 'We\'re committed to providing exceptional experiences for both guests and hosts',
     buzauCenter: 'Buzău City Center',
     buzauCenterDesc: 'Historic charm meets modern comfort',
     carpathianMountains: 'Carpathian Mountains',
@@ -101,9 +100,11 @@ export const en: TranslationKeys = {
     siriuLake: 'Siriu Lake',
     siriuLakeDesc: 'Lakeside tranquility and water sports',
     startJourney: 'Join Now',
-    ctaTitle: 'Ready to Start Your Journey?',
-    ctaDescription: 'Join thousands of travelers who have discovered their perfect stays with Vama Buzau. Whether you\'re planning a weekend getaway or an extended vacation, we have the perfect place for you.',
+    ctaTitle: 'Ready to start your journey?',
+    ctaDescription: 'Join thousands of travelers who have discovered their perfect stays with Vama Buzău. Whether you\'re planning a weekend getaway or an extended vacation, we have the perfect place for you.',
     browseProperties: 'Browse Properties',
-    becomeHost: 'Become a Host'
+    becomeHost: 'Become a Host',
+    exploreLocations: 'Explore Locations',
+    exploreLocationsDesc: 'Search for any city, state, or country and discover amazing properties in that area'
   }
 };

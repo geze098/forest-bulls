@@ -8,10 +8,14 @@ import {
   IconCoin, 
   IconFingerprint, 
   IconNotification,
-  IconDots, 
+  IconDots,
+  IconHeart,
+  IconLogout,
+  IconDashboard,
 } from '@tabler/icons-react'; 
 import { 
   Anchor, 
+  Avatar,
   Box, 
   Burger, 
   Button, 
@@ -32,9 +36,11 @@ import {
 import { useDisclosure } from '@mantine/hooks'; 
 import { MantineLogo } from '@mantinex/mantine-logo'; 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import classes from './HeaderMegaMenu.module.css';
 import { LanguagePicker } from './LanguagePicker';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useAuth } from '@/contexts/AuthContext';
 import { CurrencySelector } from '../CurrencySelector';
 import { LanguageSelector } from '../LanguageSelector';
 
@@ -78,6 +84,23 @@ export function HeaderMegaMenu() {
   const [showMoreMenu, setShowMoreMenu] = useState(false);
   const theme = useMantineTheme(); 
   const { t } = useLanguage();
+  const router = useRouter();
+  const { user, signOut } = useAuth();
+  const [userMenuOpened, setUserMenuOpened] = useState(false);
+
+  // Click handlers for auth buttons
+  const handleLoginClick = () => {
+    router.push('/auth/login');
+  };
+
+  const handleSignupClick = () => {
+    router.push('/auth/register');
+  };
+
+  const handleLogout = async () => {
+    await signOut();
+    setUserMenuOpened(false);
+  };
 
   const mockdata = getMockdata(t);
 
@@ -220,8 +243,60 @@ export function HeaderMegaMenu() {
           <Group visibleFrom="sm"> 
             <CurrencySelector buttonVariant="subtle" />
             <LanguageSelector buttonVariant="subtle" />
-            <Button variant="default">{t.header.login}</Button> 
-            <Button>{t.header.signup}</Button> 
+            {user ? (
+              <Menu 
+                width={260} 
+                position="bottom-end" 
+                transitionProps={{ transition: 'pop-top-right' }} 
+                onClose={() => setUserMenuOpened(false)} 
+                onOpen={() => setUserMenuOpened(true)} 
+                withinPortal 
+              > 
+                <Menu.Target> 
+                  <UnstyledButton 
+                    className={`${classes.user} ${userMenuOpened ? classes.userActive : ''}`}
+                  > 
+                    <Group gap={7}> 
+                      <Avatar src={user.user_metadata?.avatar_url} alt={user.user_metadata?.full_name || user.email} radius="xl" size={20} /> 
+                      <Text fw={500} size="sm" lh={1} mr={3}> 
+                        {user.user_metadata?.full_name || user.email} 
+                      </Text> 
+                      <IconChevronDown size={12} stroke={1.5} /> 
+                    </Group> 
+                  </UnstyledButton> 
+                </Menu.Target> 
+                <Menu.Dropdown> 
+                  {(user.role === 'administrator' || user.role === 'owner') && (
+                    <>
+                      <Menu.Item 
+                        leftSection={<IconDashboard size={16} color={theme.colors.blue[6]} stroke={1.5} />}
+                        onClick={() => router.push('/dashboard')}
+                      > 
+                        Dashboard 
+                      </Menu.Item>
+                      <Menu.Divider />
+                    </>
+                  )}
+                  <Menu.Item 
+                    leftSection={<IconHeart size={16} color={theme.colors.red[6]} stroke={1.5} />}
+                    onClick={() => router.push('/wishlist')}
+                  > 
+                    Wishlist 
+                  </Menu.Item> 
+                  
+                  <Menu.Divider />
+                  
+                  <Menu.Item leftSection={<IconLogout size={16} stroke={1.5} />} onClick={handleLogout}>
+                    Logout
+                  </Menu.Item> 
+                </Menu.Dropdown> 
+              </Menu>
+            ) : (
+              <>
+                <Button variant="default" onClick={handleLoginClick}>{t.header.login}</Button> 
+                <Button onClick={handleSignupClick}>{t.header.signup}</Button>
+              </>
+            )}
           </Group> 
 
           <Group hiddenFrom="sm">
@@ -302,8 +377,8 @@ export function HeaderMegaMenu() {
           <Divider my="sm" /> 
 
           <Group justify="center" grow pb="xl" px="md"> 
-            <Button variant="default">{t.header.login}</Button> 
-            <Button>{t.header.signup}</Button> 
+            <Button variant="default" onClick={handleLoginClick}>{t.header.login}</Button> 
+            <Button onClick={handleSignupClick}>{t.header.signup}</Button> 
           </Group> 
         </ScrollArea> 
       </Drawer> 
